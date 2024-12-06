@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Cumulative1N01605244.Models.Teacher>
+
+<h1>Teachers List</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Subject</th>
+            <th>Hire Date</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var teacher in Model)
+        {
+            <tr>
+                <td>@teacher.Name</td>
+                <td>@teacher.Subject</td>
+                <td>@teacher.HireDate.ToShortDateString()</td>
+                <td>
+                    <a href="/TeacherPage/Show/@teacher.Id">View Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
